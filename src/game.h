@@ -8,6 +8,8 @@ class Game
 public:
     Game();
 
+    ~Game();
+
     void Draw();
     void HandleInput();
 
@@ -15,6 +17,9 @@ public:
 
     bool game_over;
     int score;
+
+    Music music;
+
 
 private:
     void MoveBlockLeft();
@@ -31,4 +36,6 @@ private:
     std::vector<Block> blocks;
     Block current_block;
     Block next_block;
+    Sound rotate_sound;
+    Sound clear_sound;
 };
