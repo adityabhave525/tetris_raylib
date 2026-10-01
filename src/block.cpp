@@ -14,7 +14,7 @@ void Block::Draw()
     std::vector<Position> tiles = GetCellPositions();
     for (Position item : tiles)
     {
-        DrawRectangle(item.column * cell_size + 1, item.row * cell_size + 1, cell_size - 1, cell_size - 1, colors[id]);
+        DrawRectangle(item.column * cell_size + 1 + 10, item.row * cell_size + 1 + 10, cell_size - 1, cell_size - 1, colors[id]);
     }
 }
 
