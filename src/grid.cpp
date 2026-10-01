@@ -34,8 +34,6 @@ void Grid::Print()
     }
 }
 
-
-
 void Grid::Draw()
 {
     for (int row = 0; row < num_rows; row++)
@@ -46,4 +44,13 @@ void Grid::Draw()
             DrawRectangle(col * cell_size + 1, row * cell_size + 1, cell_size - 1, cell_size - 1, colors[cell_value]);
         }
     }
+}
+
+bool Grid::IsCellOutside(int row, int column)
+{
+    if (row >= 0 && row < num_rows && column >= 0 && column < num_cols)
+    {
+        return false;
+    }
+    return true;
 }
