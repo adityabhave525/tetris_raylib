@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include "game.h"
 #include "colors.h"
+#include <iostream>
 
 double last_update_time = 0;
 
@@ -47,6 +48,14 @@ int main()
         }
 
         DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, light_blue);
+        
+        char score_text[10];
+        sprintf(score_text, "%d", game.score);
+
+        Vector2 text_size = MeasureTextEx(font, score_text, 38, 2);
+
+        DrawTextEx(font, score_text, {320 + (170 - text_size.x) / 2, 65}, 38, 2, WHITE);
+
         DrawRectangleRounded({320, 215, 170, 180}, 0.3, 6, light_blue);
 
         game.Draw();

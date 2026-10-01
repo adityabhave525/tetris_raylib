@@ -16,6 +16,7 @@ public:
     void MoveBlockDown();
     Grid grid;
     bool game_over;
+    int score;
 
 private:
     bool IsBlockOutside();
@@ -23,6 +24,7 @@ private:
     void LockBlock();
     bool BlockFits();
     void Reset();
+    void UpdateScore(int lines_cleared, int move_down_points);
     std::vector<Block> blocks;
     Block current_block;
     Block next_block;
