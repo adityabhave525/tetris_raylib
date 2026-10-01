@@ -35,3 +35,21 @@ std::vector<Position> Block::GetCellPositions()
     }
     return moved_tiles;
 }
+
+void Block::Rotate()
+{
+    rotation_state++;
+    if (rotation_state == (int)cells.size())
+    {
+        rotation_state = 0;
+    }
+}
+
+void Block::UndoRotation()
+{
+    rotation_state--;
+    if (rotation_state == -1)
+    {
+        rotation_state = cells.size() - 1;
+    }
+}
